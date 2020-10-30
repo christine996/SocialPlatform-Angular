@@ -22,3 +22,8 @@
       height: 300px;
       border: rosybrown solid;
   }
+  mat-error {
+    line-height: 20px !important;
+    color: red;
+    font-size: 20px;
+  }

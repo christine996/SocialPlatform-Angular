@@ -9,14 +9,22 @@
       <form class="my-form">
          <mat-form-field class="full-width" appearance="fill">
 
-            <input  matInput  placeholder="Email" >
+            <input  matInput  placeholder="Email" 
+            required [formControl]="_loginForm.controls['_email']">
+            <mat-error
+              *ngIf=" !_loginForm.controls['_email'].valid  && _loginForm.controls['_email'].touched">
+              Please enter a valid email</mat-error>
             <mat-divider></mat-divider>
          </mat-form-field>
          <br>
          <br>
          <mat-form-field class="full-width" appearance="fill">
 
-            <input  matInput  placeholder="Password" >
+            <input  matInput  placeholder="Password"
+            required [formControl]="_loginForm.controls['_password']" >
+            <mat-error
+              *ngIf=" !_loginForm.controls['_password'].valid  && _loginForm.controls['_password'].touched">
+              Please enter a valid password</mat-error>
             <mat-divider></mat-divider>
          </mat-form-field>
       </form>

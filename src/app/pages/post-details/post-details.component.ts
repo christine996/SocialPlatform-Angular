@@ -3,6 +3,7 @@ import { Posts } from 'src/app/models/posts.interface';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Comments } from './../../models/comments.interface';
+import{Context} from './../../helpers/context';
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
@@ -15,7 +16,8 @@ export class PostDetailsComponent implements OnInit {
   _postLikesCount: number;
   _comment: string;
   constructor(private route: ActivatedRoute,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private context:Context) { }
 
   ngOnInit(): void {
     this._postId = this.route.snapshot.paramMap.get('postId');
@@ -26,7 +28,7 @@ export class PostDetailsComponent implements OnInit {
   }
 
   getPostComments() {
-    this.http.get('http://localhost:54039/api/getPostComments', {
+    this.http.get(this.context.actionsUrl.GET_POST_COMMENTS, {
       params: {
         PostId: this._postId
       }
@@ -39,7 +41,7 @@ export class PostDetailsComponent implements OnInit {
 
   }
   getPostLikes() {
-    this.http.get('http://localhost:54039/api/getPostLikes', {
+    this.http.get(this.context.actionsUrl.GET_POST_LIKES, {
       params: {
         PostId: this._postId
       }
@@ -52,7 +54,7 @@ export class PostDetailsComponent implements OnInit {
 
   }
   addComment(comment) {
-    const url = 'http://localhost:54039/api/addComment';
+    const url = this.context.actionsUrl.ADD_COMMENT;
     this.http.post(url, {
       PostId: this._postId,
       Comment: comment

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import{Context} from './../../helpers/context';
 import { Posts } from './../../models/posts.interface';
 import { ThrowStmt } from '@angular/compiler';
 @Component({
@@ -16,14 +16,15 @@ export class TimelinePageComponent implements OnInit {
   _postId: number;
   _comment: string;
   constructor(private http: HttpClient,
-    private router: Router) { }
+    private router: Router,
+    private context:Context) { }
 
   ngOnInit(): void {
     this.getAllPosts();
 
   }
   getAllPosts() {
-    this.http.get('http://localhost:54039/api/getAllPosts').subscribe((data: Posts[]) => {
+    this.http.get(this.context.actionsUrl.GET_ALL_POSTS).subscribe((data: Posts[]) => {
       this._postsResult = data;
       this._postsResult.sort((a, b) => 0 - (a > b ? 1 : -1));
       console.warn(data);
@@ -33,7 +34,7 @@ export class TimelinePageComponent implements OnInit {
   }
   AddPost() {
 
-    const url = 'http://localhost:54039/api/addPost';
+    const url = this.context.actionsUrl.ADD_POST;
     this.http.post(url, {
       Post: this._post
     }).toPromise().then((data: any) => {
@@ -48,7 +49,7 @@ export class TimelinePageComponent implements OnInit {
     this.router.navigate(['PostDetails']);
   }
   addLike(postId: number) {
-    const url = 'http://localhost:54039/api/addLikes';
+    const url = this.context.actionsUrl.ADD_LIKE;
     this.http.post(url, {
       PostId: postId
     }).toPromise().then((data: any) => {

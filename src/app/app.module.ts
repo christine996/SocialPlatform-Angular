@@ -19,6 +19,9 @@ import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import 'hammerjs';
 import { LikesCountDialogComponent } from './likes-count-dialog/likes-count-dialog.component';
+import { ValidationRules } from './helpers/validation-rules';
+import { UserManagementPageComponent } from './pages/user-management-page/user-management-page.component';
+import {Context} from './helpers/context';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import { LikesCountDialogComponent } from './likes-count-dialog/likes-count-dial
     RegisterPageComponent,
     CommentsPageComponent,
     PostsPageComponent,
-    LikesCountDialogComponent
+    LikesCountDialogComponent,
+    UserManagementPageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { LikesCountDialogComponent } from './likes-count-dialog/likes-count-dial
     ReactiveFormsModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [ValidationRules,
+    Context],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

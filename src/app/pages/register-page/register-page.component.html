@@ -1,1 +1,62 @@
-<p>register-page works!</p>
+
+<mat-card class="my-card">
+    <mat-toolbar class="register-toolbar">
+      <span>Register</span>
+    </mat-toolbar>
+    <br>
+    <br>
+     <mat-card-content>
+        <form class="my-form">
+           <mat-form-field class="full-width" appearance="fill">
+  
+              <input  matInput  placeholder="Email" [(ngModel)]="_email" name="_email" 
+              required [formControl]="_registrationForm.controls['_email']">
+              <mat-error
+              *ngIf=" !_registrationForm.controls['_email'].valid  && _registrationForm.controls['_email'].touched">
+              Please enter a valid email</mat-error>
+              <mat-divider></mat-divider>
+           </mat-form-field>
+           <br>
+           <br>
+           <mat-form-field class="full-width" appearance="fill" >
+  
+              <input  matInput  placeholder="Password" [(ngModel)]="_password" name="_password"
+              required [formControl]="_registrationForm.controls['_password']">
+              <mat-error
+              *ngIf=" !_registrationForm.controls['_password'].valid  && _registrationForm.controls['_password'].touched">
+              Please enter a valid password</mat-error>
+              <mat-divider></mat-divider>
+           </mat-form-field>
+           <br>
+           <br>
+
+           <mat-form-field class="full-width" appearance="fill" >
+  
+              <input  matInput  placeholder="User Name" [(ngModel)]="_userName"  name="_userName"
+              required [formControl]="_registrationForm.controls['_userName']">
+              <mat-error
+              *ngIf=" !_registrationForm.controls['_userName'].valid  && _registrationForm.controls['_userName'].touched">
+              Please enter a valid User Name</mat-error>
+              <mat-divider></mat-divider>
+           </mat-form-field>
+
+
+           <br>
+           <br>
+           <mat-form-field class="full-width" appearance="fill" >
+  
+              <input  matInput  placeholder="Mobile Number" [(ngModel)]="_mobileNumber" name="_mobileNumber"
+              required [formControl]="_registrationForm.controls['_mobileNumber']">
+              <mat-error
+              *ngIf=" !_registrationForm.controls['_mobileNumber'].valid  && _registrationForm.controls['_mobileNumber'].touched">
+               Please enter a valid Mobile Number</mat-error>
+              <mat-divider></mat-divider>
+           </mat-form-field>
+        </form>
+     </mat-card-content>
+     <br>
+     <br>
+     <mat-card-actions>
+        <button mat-raised-button  (click)="Register()">Register</button>
+     </mat-card-actions>
+  </mat-card>
