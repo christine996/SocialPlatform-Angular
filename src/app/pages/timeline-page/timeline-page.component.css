@@ -1,0 +1,111 @@
+img {
+    border-radius: 50%;
+  }
+
+
+    .mat-grid-tile .mat-figure {
+        top: 0;
+       
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+       
+    }
+.example-card {
+    max-width: 400px;
+  }
+
+
+
+  ::ng-deep .mat-figure {
+    text-align: center !important;
+    display: block !important;
+    align-items: center !important;
+     justify-content: center !important; 
+    margin-top: 2px !important;
+    left: 100px !important;
+  }
+
+  .example-card:hover {
+    background-image: linear-gradient(-180deg,#f0f3f6,#bb9459 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em;
+  }
+
+
+ 
+   .example-card {
+    max-width: 400px;
+    background-color:#c38D9E;
+  }
+  
+  .example-header-image {
+    background-image: url("./../../../assets/user.png");;
+    background-size: cover;
+  }
+  .mat-card-avatar {
+    height: 35px;
+    width: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.mat-card>.mat-card-actions:last-child {
+    /* margin-bottom: -8px; */
+    /* padding-bottom: 0; */
+}
+
+.mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+    margin-bottom: 0;
+}
+
+.mat-card-actions {
+    margin-left: 190px;
+    margin-right: -8px;
+    padding: 8px 0;
+}
+.details-icon{
+    width: 100px;
+    height: 30px;
+    text-align: end !important;
+    display: block;
+    /* position: fixed; */
+    /* margin-block-start: -25px;
+    margin-inline-end: 27px; */
+    width:100px;
+    margin: 0 260px !important;
+}
+.details-icon:hover {
+    /* background-image: linear-gradient(-180deg,#f0f3f6,#131313 90%);
+    border-color: rgba(27,31,35,.35);
+    background-position: -.5em; */
+    color: blueviolet;
+  }
+  .mat-expansion-indicator::after {
+    color: red !important;
+}
+.post-content{
+    font-size: larger;
+    font-family: cursive;
+
+}
+.add-post{
+    font-size: larger;
+    font-family: cursive;
+    background-color: bisque;
+    display: block;
+}
+.sort-btn{
+  width: 100px;
+  height: 45px;
+  font-size: 18px;
+  border-radius: 10px;
+  border-color: beige;
+  margin-left: 20px;
+  }

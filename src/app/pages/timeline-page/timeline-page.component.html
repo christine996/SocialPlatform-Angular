@@ -1,0 +1,66 @@
+<button (click)="sortPosts()" class="sort-btn">Sort Posts</button>
+<br>
+<br>
+<mat-card class="add-post">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>ADD Post</mat-card-title>
+
+  </mat-card-header>
+  <div class="example-container">
+      <mat-form-field appearance="fill">
+       
+        <input matInput [(ngModel)]="_post" placeholder="add post" >
+        <mat-divider></mat-divider>
+      </mat-form-field>
+      </div>
+  <mat-card-content>
+   
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="AddPost()">Post</button>
+   
+  </mat-card-actions>
+</mat-card>
+<br>
+<br>
+<mat-divider></mat-divider>
+  <br>
+  <br>
+  
+
+
+<mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile  *ngFor="let post of _postsResult" >
+
+        <mat-card class="example-card" >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>   
+               <img  src="./../../../assets/bullet-list.svg"  class="details-icon" (click)="postDetails(post)"></mat-card-title>
+               
+          </mat-card-header> 
+          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+          <mat-card-content>
+            <p class="post-content">
+              {{post.Post}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+           
+            <button mat-button (click)="addLike(post.Id)">
+              <img (click)="addLike(post.Id)" src="./../../../assets/like.png" alt="Avatar" style="width:30px; background: none !important;">
+              LIKE</button>
+            <!-- <button mat-button (click)="postDetails(post)" >Post Details</button> -->
+          </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+
+   
+ 
+  </mat-grid-list>
+  <br>
+  <br>
+  
+
+ 

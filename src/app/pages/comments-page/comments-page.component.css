@@ -1,0 +1,10 @@
+/* .comments-table
+{
+ 
+    font-size: 25px;
+} */
+table {
+    width: 100%;
+    font-size: 25px;
+    border: red solid 1px;
+  }

@@ -1,0 +1,38 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <!-- <mat-card-title>Post ID:{{_postId}}</mat-card-title> -->
+        <mat-card-subtitle>{{_postLikesCount}} people like this post</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p>
+     {{_postContent}}
+      </p>
+      <br>
+      <br>
+      <mat-label>
+        Post Comments:
+      </mat-label>
+      
+      <br>
+      <p *ngFor="let c of _postComments">
+          {{c.comment}}
+      </p>
+      <br>
+      <br>
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+    
+          <input matInput name="comment" placeholder="add your comment"  [(ngModel)]="_comment">
+          <mat-divider></mat-divider>
+        </mat-form-field>
+        </div>
+    </mat-card-content>
+<mat-card-actions>
+    <button mat-raised-button (click)="addComment(_comment)">
+        comment
+    </button>
+</mat-card-actions>
+  </mat-card>
+  

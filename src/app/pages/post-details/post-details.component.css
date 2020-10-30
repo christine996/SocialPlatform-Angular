@@ -1,0 +1,10 @@
+.example-card {
+    max-width: 400px;
+    background-color: antiquewhite;
+    max-height: 1000px;
+    /* width: calc(50%-400px) !important; */
+    -webkit-margin-start: calc(50% - 400px) !important;
+    font-family: cursive;
+    font-size: larger;
+}
+  
