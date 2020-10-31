@@ -70,6 +70,7 @@ export class PostDetailsComponent implements OnInit {
       Comment: comment
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.getPostComments();
     });
 
   }

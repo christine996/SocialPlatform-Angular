@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Comments } from './../../models/comments.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import {LikesCountDialogComponent } from './../../pages/likes-count-dialog/likes-count-dialog.component';
-import{Context} from './../../helpers/context';
+import { LikesCountDialogComponent } from './../../pages/likes-count-dialog/likes-count-dialog.component';
+import { Context } from './../../helpers/context';
 @Component({
   selector: 'app-comments-page',
   templateUrl: './comments-page.component.html',
@@ -17,7 +17,7 @@ export class CommentsPageComponent implements OnInit {
   _postLikesCount: any;
   constructor(private http: HttpClient,
     private dialog: MatDialog,
-    private context:Context) { }
+    private context: Context) { }
 
   ngOnInit(): void {
     this.getAllComments();
@@ -29,10 +29,6 @@ export class CommentsPageComponent implements OnInit {
       this.dataSource = new MatTableDataSource<Comments>(data);
       this._commentsResult = data;
       console.warn(data);
-      // for (var x of this._commentsResult) {
-      //   this.getPostLikes(x.PostId);
-
-      // }
 
     });
 
@@ -43,6 +39,7 @@ export class CommentsPageComponent implements OnInit {
       Id: commentId
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.getAllComments();
     });
 
   }
@@ -54,7 +51,6 @@ export class CommentsPageComponent implements OnInit {
 
     }).subscribe((data: any) => {
       this._postLikesCount = data;
-      console.warn("1515151", data);
 
     });
 

@@ -58,8 +58,5 @@ export class RegisterPageComponent implements OnInit {
       panelClass: ['blue-snackbar']
     });
 
-
-    // localStorage.setItem('dataSource', this.dataSource.length);
-    // localStorage.getItem('dataSource')
   }
 }

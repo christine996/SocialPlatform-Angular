@@ -31,6 +31,7 @@ export class PostsPageComponent implements OnInit {
       Id: PostId
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.getAllPosts();
     });
   }
 }

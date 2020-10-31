@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Comments } from './../../models/comments.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import {User} from './../../models/users.interface';
 import{Context} from './../../helpers/context';
@@ -34,6 +33,7 @@ export class UserManagementPageComponent implements OnInit {
       Id: userId
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.getAllUsers();
     });  
   }
 }

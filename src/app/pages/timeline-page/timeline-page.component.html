@@ -12,7 +12,6 @@
         <textarea matInput
         [(ngModel)]="_post" placeholder="Add Your Post Here"  required [formControl]="_postForm.controls['_posts']"
           ></textarea>
-        <!-- <input matInput [(ngModel)]="_post" placeholder="Add Your Post Here"  required [formControl]="_postForm.controls['_posts']"> -->
         <mat-error
         *ngIf=" !_postForm.controls['_posts'].valid  && _postForm.controls['_posts'].touched">
         Please enter your post</mat-error>
@@ -45,7 +44,7 @@
                <img  src="./../../../assets/bullet-list.svg"  class="details-icon" (click)="postDetails(post)"></mat-card-title>
                
           </mat-card-header> 
-          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+      
           <mat-card-content>
             <p class="post-content">
               {{post.Post}}
@@ -56,7 +55,7 @@
             <button mat-button (click)="addLike(post.Id)" class="like-btn">
               <img  class="like-img" (click)="addLike(post.Id)" src="./../../../assets/like.svg" >
               LIKE</button>
-            <!-- <button mat-button (click)="postDetails(post)" >Post Details</button> -->
+         
           </mat-card-actions>
         </mat-card>
     </mat-grid-tile>

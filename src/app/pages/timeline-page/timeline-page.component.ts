@@ -49,8 +49,9 @@ export class TimelinePageComponent implements OnInit {
       Post: this._post
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.getAllPosts();
     });
-    this.getAllPosts();
+  
   }
   postDetails(post: Posts) {
     this.router.navigate(['PostDetails', { postId: post.Id, postContent: post.Post }]);
