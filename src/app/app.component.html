@@ -1,19 +1,13 @@
 
 
-<style> 
-  /* .toolbar {
-
-  width: 1520px;
-  height: 40px;
-  background-color: #f2f2f2;
-  } */
-
-</style>
-
-<!-- Toolbar -->
 <p>
   <mat-toolbar class="tool-bar">
-    <h2>Social Media Platform</h2>
+    <h2 style="color: #edc7b7;">Social Media Platform</h2>
+    <div class="toolbar-div">
+    <mat-label class="toolbar-label" (click)="navToAdminPanel()">Admin Panel</mat-label>
+    <mat-label class="toolbar-label" (click)="navToRegister()">Register</mat-label>
+    <mat-label class="toolbar-label" (click)="navtToLogin()">Login</mat-label>
+  </div>
   </mat-toolbar>
 </p>
 <br>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidationRules } from './../../helpers/validation-rules';
-import{Context} from './../../helpers/context';
+import { Context } from './../../helpers/context';
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
@@ -16,19 +16,19 @@ export class RegisterPageComponent implements OnInit {
   _userName: string;
   _mobileNumber; number;
   _registrationForm: FormGroup;
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
     private validationRules: ValidationRules,
     private http: HttpClient,
     private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
-    private context:Context) {
+    private context: Context) {
 
     this._registrationForm = this.formBuilder.group(
       {
-        _userName: ['', Validators.compose([Validators.required,Validators.pattern(this.validationRules.Expression.USER_NAME)])],
-        _email: ['', Validators.compose([Validators.required,Validators.pattern(this.validationRules.Expression.EMAIL)])],
-        _password: ['', Validators.compose([Validators.required,Validators.pattern(this.validationRules.Expression.PASSWORD)])],
-        _mobileNumber: ['', Validators.compose([Validators.required,Validators.pattern(this.validationRules.Expression.NUMBERS_ONLY)])]
+        _userName: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.USER_NAME)])],
+        _email: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.EMAIL)])],
+        _password: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.PASSWORD)])],
+        _mobileNumber: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.PHONE)])]
       },
     );
 
@@ -45,6 +45,7 @@ export class RegisterPageComponent implements OnInit {
       UserName: this._userName
     }).toPromise().then((data: any) => {
       console.log(data);
+      this.router.navigate(['TimelinePage']);
     }).catch((error) => {
       console.error(error);
       this.openSnackBar();

@@ -4,16 +4,16 @@
       <td mat-cell *matCellDef="let element"> {{element.PostId}} </td>
     </ng-container>
     <ng-container matColumnDef="comment">
-      <th mat-header-cell *matHeaderCellDef> comment </th>
+      <th mat-header-cell *matHeaderCellDef> Comments </th>
       <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
     </ng-container>
    
     <ng-container matColumnDef="Actions">
-      <th mat-header-cell *matHeaderCellDef> action </th>
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let element">
        
-       <button mat-raised-button (click)="deleteComment(element.Id)">Delete</button>
-       <button mat-raised-button (click)="likesCount(element.PostId)">likes</button>
+       <button mat-raised-button (click)="deleteComment(element.Id)" class="delete-btn">Delete</button>
+       <button mat-raised-button (click)="likesCount(element.PostId)" class="like-btn">likes</button>
       </td>
     </ng-container>
   

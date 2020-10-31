@@ -1,6 +1,14 @@
-
 table {
-    width: 100%;
-    font-size: 25px;
-    border: red solid 1px;
-  }
+  width: 100%;
+  font-size: 25px;
+  border: #ac3b61 solid ;
+  background-color: #bab2b5 !important;
+  color: #123c69;
+}
+
+.deactivate-btn{
+  background-color: #edc7b7;
+}
+.deactivate-btn:active{
+  background-color: #ac3b61;
+}

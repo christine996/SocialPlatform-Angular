@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import{Context} from './../../helpers/context';
+import { Context } from './../../helpers/context';
 import { Posts } from './../../models/posts.interface';
 import { ThrowStmt } from '@angular/compiler';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-timeline-page',
   templateUrl: './timeline-page.component.html',
@@ -15,9 +16,18 @@ export class TimelinePageComponent implements OnInit {
   _post: any;
   _postId: number;
   _comment: string;
+  _postForm: FormGroup;
   constructor(private http: HttpClient,
     private router: Router,
-    private context:Context) { }
+    private context: Context,
+    private formBuilder: FormBuilder) {
+    this._postForm = this.formBuilder.group(
+      {
+        _posts: ['', Validators.compose([Validators.required])],
+
+      },
+    );
+  }
 
   ngOnInit(): void {
     this.getAllPosts();

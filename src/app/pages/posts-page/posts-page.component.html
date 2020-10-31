@@ -1,28 +1,26 @@
 
-  <mat-grid-list cols="2" rowHeight="300px">
+  <mat-grid-list cols="2" rowHeight="400px">
     <mat-grid-tile  *ngFor="let post of _postsResult" >
 
         <mat-card class="example-card" >
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>   
-               <!-- <img  src="./../../../assets/bullet-list.svg"  class="details-icon" (click)="postDetails(post)"> -->
+              
             </mat-card-title>
                
           </mat-card-header> 
-          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+         
           <mat-card-content>
             <p class="post-content">
               {{post.Post}}
             </p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button (click)="deletePost(post.Id)">
-                delete
+            <button mat-raised-button (click)="deletePost(post.Id)" class="delete-btn">
+                Delete
                        </button>
-            <!-- <img (click)="addLike(post.Id)" src="./../../../assets/like.png" alt="Avatar" style="width:50px; background: none !important;"> -->
-            <!-- <button mat-button (click)="addLike(post.Id)">LIKE</button> -->
-            <!-- <button mat-button (click)="postDetails(post)" >Post Details</button> -->
+    
           </mat-card-actions>
         </mat-card>
     </mat-grid-tile>

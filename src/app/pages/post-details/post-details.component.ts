@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Comments } from './../../models/comments.interface';
 import{Context} from './../../helpers/context';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
@@ -15,9 +16,18 @@ export class PostDetailsComponent implements OnInit {
   _postComments: Comments[] = [];
   _postLikesCount: number;
   _comment: string;
+  _commentForm:FormGroup;
   constructor(private route: ActivatedRoute,
     private http: HttpClient,
-    private context:Context) { }
+    private context:Context,
+    private formBuilder: FormBuilder) { 
+      this._commentForm = this.formBuilder.group(
+        {
+          _comment: ['', Validators.compose([Validators.required])],
+  
+        },
+      );
+    }
 
   ngOnInit(): void {
     this._postId = this.route.snapshot.paramMap.get('postId');

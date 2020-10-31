@@ -1,10 +1,30 @@
 .example-card {
-    max-width: 400px;
-    background-color: antiquewhite;
+    max-width: 600px;
+    background-color: #bab2b5;
     max-height: 1000px;
     /* width: calc(50%-400px) !important; */
     -webkit-margin-start: calc(50% - 400px) !important;
     font-family: cursive;
     font-size: larger;
+    border: solid #ac3b61;
+    color: #123c69;
+    width: 600px;
 }
+
+.like-lbl{
+    color: #eee2dc;
+    text-align: left !important;
+    font-size: 25px;
+}
+mat-error {
+    line-height: 20px !important;
+    color: red;
+    font-size: 15px;
+  }
+  .comment-btn{
+    background-color: #edc7b7;
+  }
+  .comment-btn:active{
+    background-color: #123c69;
+  }
   

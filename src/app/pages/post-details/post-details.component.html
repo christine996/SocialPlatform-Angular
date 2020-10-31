@@ -2,7 +2,10 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <!-- <mat-card-title>Post ID:{{_postId}}</mat-card-title> -->
-        <mat-card-subtitle>{{_postLikesCount}} people like this post</mat-card-subtitle>
+        <mat-card-subtitle class="like-lbl">
+          {{_postLikesCount}}
+          
+          people like this post</mat-card-subtitle>
     </mat-card-header>
     
     <mat-card-content>
@@ -23,14 +26,20 @@
       <br>
       <div class="example-container">
         <mat-form-field appearance="fill">
-    
-          <input matInput name="comment" placeholder="add your comment"  [(ngModel)]="_comment">
+          <textarea matInput 
+          [(ngModel)]="_comment" placeholder="Add Your Comment Here"  required [formControl]="_commentForm.controls['_comment']"
+            ></textarea>
+          
+          <mat-error
+          *ngIf=" !_commentForm.controls['_comment'].valid  && _commentForm.controls['_comment'].touched">
+          Please enter your comment</mat-error>
+       
           <mat-divider></mat-divider>
         </mat-form-field>
         </div>
     </mat-card-content>
-<mat-card-actions>
-    <button mat-raised-button (click)="addComment(_comment)">
+<mat-card-actions style="margin-top: 50px;">
+    <button class="comment-btn" mat-raised-button (click)="addComment(_comment)" [disabled]="!_commentForm.valid">
         comment
     </button>
 </mat-card-actions>

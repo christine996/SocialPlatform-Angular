@@ -1,0 +1,18 @@
+
+  span.admin-span {
+  cursor: pointer !important;
+ 
+  }
+  li{
+    margin-bottom: 10px;
+  }
+  li:hover {
+   color: #edc7b7;
+  }
+  .admin-options{
+      border: solid #ac3b61;
+      font-size: 25px;
+      color: #123b69;
+      width: 500px;
+      height: 300px;
+  }

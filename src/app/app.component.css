@@ -2,5 +2,29 @@
   .tool-bar {
     width: 1900px !important;
     height: 60px;
-    background-color: #41b3a3;
+    background-color: #123c69;
+    color: #eee2dc;
 }
+.toolbar-div{
+
+
+    float: right !important;
+    display: block;
+
+    text-align: right !important;
+    right: 0 !important;
+
+    margin-inline-start: 1200px;
+    color: #eee2dc;
+}
+.toolbar-label{
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+}
+.toolbar-label:hover{
+  color:#edc7b7;
+  text-decoration: underline;
+}
+mat-label.toolbar-label {
+  cursor: pointer !important;
+  }

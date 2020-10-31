@@ -19,6 +19,15 @@ export class AppComponent {
   ngOnInit() {
  
   }
+  navToAdminPanel(){
+    this.router.navigate(['adminPanel']);
+  }
+  navToRegister(){
+    this.router.navigate(['register']);
+  }
+  navtToLogin(){
+    this.router.navigate(['login']);
+  }
 
 }
 

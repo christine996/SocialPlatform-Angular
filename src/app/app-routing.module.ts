@@ -7,6 +7,7 @@ import {RegisterPageComponent} from './pages/register-page/register-page.compone
 import {CommentsPageComponent} from './pages/comments-page/comments-page.component';
 import {PostsPageComponent} from './pages/posts-page/posts-page.component';
 import {UserManagementPageComponent} from './pages/user-management-page/user-management-page.component';
+import {AdminPanelComponent} from './pages/admin-panel/admin-panel.component'
   // import { from } from 'rxjs';
 const routes: Routes = [
   { path: '', redirectTo: '/TimelinePage', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'commentsPage', component: CommentsPageComponent },
   { path: 'postsPage', component: PostsPageComponent },
-  { path: 'userManagementPage', component: UserManagementPageComponent }
+  { path: 'userManagementPage', component: UserManagementPageComponent },
+  { path: 'adminPanel', component: AdminPanelComponent }
 
 ];
 

@@ -2,5 +2,20 @@
 table {
     width: 100%;
     font-size: 25px;
-    border: red solid 1px;
+    border: #ac3b61 solid ;
+    background-color: #bab2b5 !important;
+    color: #123c69;
+  }
+  .delete-btn{
+    margin-right: 10px;
+    background-color: #edc7b7;
+  }
+  .like-btn{
+    background-color: #edc7b7;
+  }
+  .like-btn:active{
+    background-color: #ac3b61;
+  }
+  .delete-btn:active{
+    background-color: #ac3b61;
   }

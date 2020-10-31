@@ -18,10 +18,11 @@ import { CommentsPageComponent } from './pages/comments-page/comments-page.compo
 import { PostsPageComponent } from './pages/posts-page/posts-page.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import 'hammerjs';
-import { LikesCountDialogComponent } from './likes-count-dialog/likes-count-dialog.component';
+import { LikesCountDialogComponent } from './pages/likes-count-dialog/likes-count-dialog.component';
 import { ValidationRules } from './helpers/validation-rules';
 import { UserManagementPageComponent } from './pages/user-management-page/user-management-page.component';
 import {Context} from './helpers/context';
+import { AdminPanelComponent } from './pages/admin-panel/admin-panel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import {Context} from './helpers/context';
     CommentsPageComponent,
     PostsPageComponent,
     LikesCountDialogComponent,
-    UserManagementPageComponent
+    UserManagementPageComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,

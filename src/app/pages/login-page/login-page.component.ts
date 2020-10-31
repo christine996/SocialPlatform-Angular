@@ -16,10 +16,8 @@ export class LoginPageComponent implements OnInit {
     private router: Router) {
     this._loginForm = this.formBuilder.group(
       {
-        _userName: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.USER_NAME)])],
-        _email: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.EMAIL)])],
+       _email: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.EMAIL)])],
         _password: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.PASSWORD)])],
-        _mobileNumber: ['', Validators.compose([Validators.required, Validators.pattern(this.validationRules.Expression.NUMBERS_ONLY)])]
       },
     );
   }

@@ -32,6 +32,6 @@
    <br>
    <br>
    <mat-card-actions>
-      <button mat-raised-button  (click)="navToTimeline()">LOGIN</button>
+      <button mat-raised-button class="login-btn" (click)="navToTimeline()" [disabled]="!_loginForm.valid">LOGIN</button>
    </mat-card-actions>
 </mat-card>

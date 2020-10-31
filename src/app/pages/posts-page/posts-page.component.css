@@ -32,8 +32,9 @@ img {
     left: 100px !important;
   }
 
+ 
   .example-card:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#bb9459 90%);
+    background-image: linear-gradient(-180deg,#edc7b7,#123b69 90%);
     border-color: rgba(27,31,35,.35);
     background-position: -.5em;
   }
@@ -42,7 +43,9 @@ img {
  
    .example-card {
     max-width: 400px;
-    background-color:#c38D9E;
+    background-color:#bab2b5;
+    border: #ac3b61 solid;
+    color: #123b69  ;
   }
   
   .example-header-image {
@@ -70,42 +73,15 @@ img {
     margin-right: -8px;
     padding: 8px 0;
 }
-.details-icon{
-    width: 100px;
-    height: 30px;
-    text-align: end !important;
-    display: block;
-    /* position: fixed; */
-    /* margin-block-start: -25px;
-    margin-inline-end: 27px; */
-    width:100px;
-    margin: 0 260px !important;
+.delete-btn:active{
+  background-color: #123c69;
 }
-.details-icon:hover {
-    /* background-image: linear-gradient(-180deg,#f0f3f6,#131313 90%);
-    border-color: rgba(27,31,35,.35);
-    background-position: -.5em; */
-    color: blueviolet;
-  }
-  .mat-expansion-indicator::after {
-    color: red !important;
+
+.delete-btn{
+  background-color: #edc7b7;
 }
 .post-content{
     font-size: larger;
     font-family: cursive;
 
 }
-.add-post{
-    font-size: larger;
-    font-family: cursive;
-    background-color: bisque;
-    display: block;
-}
-.sort-btn{
-  width: 100px;
-  height: 45px;
-  font-size: 18px;
-  border-radius: 10px;
-  border-color: beige;
-  margin-left: 20px;
-  }
