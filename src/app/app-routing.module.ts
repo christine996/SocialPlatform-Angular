@@ -10,7 +10,7 @@ import {UserManagementPageComponent} from './pages/user-management-page/user-man
 import {AdminPanelComponent} from './pages/admin-panel/admin-panel.component'
   // import { from } from 'rxjs';
 const routes: Routes = [
-  { path: '', redirectTo: '/TimelinePage', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   // /////////////////////////////////////////////////////////////////////////
   { path: 'TimelinePage', component: TimelinePageComponent },
   { path: 'PostDetails', component: PostDetailsComponent },
